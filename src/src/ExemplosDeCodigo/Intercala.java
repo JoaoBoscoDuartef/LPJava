@@ -1,5 +1,6 @@
 package ExemplosDeCodigo;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Intercala {
@@ -22,7 +23,7 @@ public class Intercala {
         int[] novoVetor = criarVetor(tamanhoNovoVetor);
 
         intercalar(vetorUm, vetorDois, novoVetor);
-
+        System.out.println(Arrays.toString(novoVetor));
     }
 
     //Intercalar vetores
@@ -31,7 +32,7 @@ public class Intercala {
 
         while (i < vetorUm.length && i < vetorDois.length) {
             novoVetor[k++] = vetorUm[i++];
-            novoVetor[k++] = vetorDois[i++];
+            novoVetor[k++] = vetorDois[j++];
         }
 
         while (i < vetorUm.length) {
@@ -40,10 +41,6 @@ public class Intercala {
 
         while (j < vetorDois.length) {
             novoVetor[k++] = vetorDois[j++];
-        }
-
-        for (k = 0; i < novoVetor.length; i++) {
-            System.out.println(novoVetor[k]);
         }
     }
 
@@ -73,6 +70,7 @@ public class Intercala {
                 continuar = true;
             }
         }
+        sc.close();
 
         return tamanho;
     }
